@@ -1,38 +1,124 @@
-.App {
+/* App.css */
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Title styles */
+.app-title {
   text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Container styles */
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Search section styles */
+.search-section {
+  margin-bottom: 20px;
+  background-color: #bc06da;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  box-sizing: border-box;
+  background-color: #bc06da;
+  color: #ffffff;
+  outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+.search-input::placeholder {
+  color: #ffffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-button {
+  padding: 15px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  box-sizing: border-box;
+  background-color: #bc06da;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #bc06da;
+}
+
+/* Search results styles */
+.search-results {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results li {
+  cursor: pointer;
+  padding: 15px;
+  background-color: #bc06da;
+  border-bottom: 1px solid #bc06da;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-results li:hover {
+  background-color: #740574;
+  color: #fff;
+}
+
+/* Data section styles */
+.data-section {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  color: #333;
+}
+
+.data-row:hover {
+  background-color: #f0f0f0;
+}
+
+.data-row td {
+  padding: 15px;
+}
+
+.data-row:hover td {
+  background-color: #e0e0e0;
 }
