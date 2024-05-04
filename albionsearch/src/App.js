@@ -133,8 +133,7 @@ function App() {
                                         <td>{apiData[item._id].minSellPrice}</td>
                                         <td>{apiData[item._id].cityWithMaxBuyPrice}</td>
                                         <td>{apiData[item._id].maxBuyPrice}</td>
-                                        <td>{apiData[item._id].profitPercentage.toFixed(2)}%</td>
-                                    </>
+                                        <td>{apiData[item._id] && apiData[item._id].profitPercentage !== undefined ? apiData[item._id].profitPercentage.toFixed(2) + '%' : ''}</td>                                    </>
                                 )}
                             </tr>
                         </React.Fragment>
