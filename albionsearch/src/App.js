@@ -245,8 +245,6 @@ function App() {
                                         <td>{apiData[item._id].maxBuyPrice}</td>
                                         <td>{apiData[item._id].profitPercentage.toFixed(2)}%</td>
                                     </>
-                                ) : (
-                                    <td colSpan="5">Data loading or unavailable...</td>
                                 )}
                             </tr>
                         </React.Fragment>
