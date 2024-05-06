@@ -34,7 +34,43 @@ body {
   border-radius: 10px;
   overflow: hidden;
 }
+.mainPanel{
+display: flex;
+  flex-direction: row;
+}
+.layout {
+  background-color: black;
+  color: #bc06da;
+  padding: 10px;
+  font-size: xx-large;
+  text-align: center;
+  text-shadow: 0 0 10px #bc06da, 0 0 20px #bc06da, 0 0 30px #bc06da, 0 0 40px #bc06da, 0 0 50px #bc06da, 0 0 60px #bc06da, 0 0 70px #bc06da;
+}
 
+.favorites-section {
+  width: 20%;
+  margin: 10px;
+  border: solid 2px transparent; /* Utilisation d'une bordure transparente pour l'effet néon */
+  border-radius: 5%;
+  text-align: center;
+  box-shadow: 0 0 5px #bc06da, 0 0 10px #bc06da, 0 0 15px #bc06da, 0 0 20px #bc06da; /* Ombre pour l'effet néon */
+}
+.search-section .input{
+  color: white;
+}
+.dataApi{
+  margin: 15px;
+  width: 80%;
+}
+.search-bar{
+  display: flex;
+  flex-direction: row;
+  width:100%;
+}
+.search-section{
+  width: 87%;
+  margin-right: 10px;
+}
 .search-input {
   width: 100%;
   padding: 15px;
@@ -122,3 +158,45 @@ body {
 .data-row:hover td {
   background-color: #e0e0e0;
 }
+
+/* Styles généraux pour les boutons */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #bc06da; /* Bleu Bootstrap par défaut */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Effet de survol pour les boutons */
+button:hover {
+  background-color: #740574; /* Un bleu plus foncé au survol */
+  transform: translateY(-2px); /* Petit effet de soulèvement */
+}
+
+/* Effet actif pour les boutons (quand on clique) */
+button:active {
+  background-color: #740574; /* Un bleu encore plus foncé quand le bouton est actif */
+  transform: translateY(1px); /* Le bouton semble être enfoncé */
+}
+
+/* Option pour un bouton de style alternatif (par exemple, danger ou alerte) */
+button-danger {
+  background-color: #e53be5; /* Rouge pour les actions dangereuses */
+}
+
+button-danger:hover {
+  background-color: #c82333; /* Un rouge plus foncé au survol */
+}
+
+/* Option pour un bouton désactivé */
+button-disabled {
+  background-color: #6c757d; /* Gris pour les boutons désactivés */
+  cursor: not-allowed; /* Change le curseur pour indiquer l'interdiction */
+}
+
