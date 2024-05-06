@@ -158,7 +158,7 @@ function App() {
 
         <div className="App">
             <div className="layout">
-        <h2>GOFASTBION</h2>
+                <h2>GOFASTBION</h2>
             </div>
 
             <div className="mainPanel">
@@ -189,73 +189,75 @@ function App() {
 
                 <div className="dataApi">
                     <div className="search-bar">
-            <div className="search-section">
-                <input
-                    type="text"
-                    className="search-input"
-                    placeholder="Rechercher un item"
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                />
-                <ul className="search-results">
-                    {filteredItems.map((item, index) => (
-                        <li key={index} onClick={() => addItemToDB(item.UniqueName, item.LocalizedNames?.['FR-FR'])}>
-                            {item.LocalizedNames?.['FR-FR'] || 'No translation available'}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <div className="panelButton">
-                <button onClick={dropDataBase}><BiReset /></button>
-                <button onClick={refreshData}><LuRefreshCcw /></button>
+                        <div className="search-section">
+                            <input
+                                type="text"
+                                className="search-input"
+                                placeholder="Rechercher un item"
+                                value={searchTerm}
+                                onChange={handleSearchChange}
+                            />
+                            <ul className="search-results">
+                                {filteredItems.map((item, index) => (
+                                    <li key={index} onClick={() => addItemToDB(item.UniqueName, item.LocalizedNames?.['FR-FR'])}>
+                                        {item.LocalizedNames?.['FR-FR'] || 'No translation available'}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="panelButton">
+                            <button onClick={dropDataBase}><BiReset /></button>
+                            <button onClick={refreshData}><LuRefreshCcw /></button>
 
-            </div>
+                        </div>
                     </div>
 
 
-            <div className="data-section">
-                <table className="data-table">
-                    <thead>
-                    <tr>
-                        <th>Action</th>
-                        <th>Nom</th>
-                        <th>Ville de départ</th>
-                        <th>Prix de d'achat</th>
-                        <th>Ville d'arrivé </th>
-                        <th>Prix de vente</th>
-                        <th>Profit</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {sortedItems.map((item, index) => (
-                        <React.Fragment key={index}>
-                            <tr className="data-row" >
-                                <td>
-                                    <button onClick={() => addFavorite(item)}><FaHeart /> </button>
-                                    <button onClick={() => deleteItemFromDB(item)}><FaRegTrashAlt /> </button>
-
-                                </td>
-                                <td>{item.frName}</td>
-                                {apiData[item._id] && typeof apiData[item._id].profitPercentage === 'number' ? (
-                                    <>
-
-                                        <td>{apiData[item._id].cityWithMinSellPrice}</td>
-                                        <td>{apiData[item._id].minSellPrice}</td>
-                                        <td>{apiData[item._id].cityWithMaxBuyPrice}</td>
-                                        <td>{apiData[item._id].maxBuyPrice}</td>
-                                        <td>{apiData[item._id].profitPercentage.toFixed(2)}%</td>
-                                    </>
-                                )}
+                    <div className="data-section">
+                        <table className="data-table">
+                            <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>Nom</th>
+                                <th>Ville de départ</th>
+                                <th>Prix de d'achat</th>
+                                <th>Ville d'arrivé </th>
+                                <th>Prix de vente</th>
+                                <th>Profit</th>
                             </tr>
-                        </React.Fragment>
-                    ))}
-                    </tbody>
+                            </thead>
+                            <tbody>
+                            {sortedItems.map((item, index) => (
+                                <React.Fragment key={index}>
+                                    <tr className="data-row" >
+                                        <td>
+                                            <button onClick={() => addFavorite(item)}><FaHeart /> </button>
+                                            <button onClick={() => deleteItemFromDB(item)}><FaRegTrashAlt /> </button>
+
+                                        </td>
+                                        <td>{item.frName}</td>
+                                        {apiData[item._id] && typeof apiData[item._id].profitPercentage === 'number' ? (
+                                            <>
+
+                                                <td>{apiData[item._id].cityWithMinSellPrice}</td>
+                                                <td>{apiData[item._id].minSellPrice}</td>
+                                                <td>{apiData[item._id].cityWithMaxBuyPrice}</td>
+                                                <td>{apiData[item._id].maxBuyPrice}</td>
+                                                <td>{apiData[item._id].profitPercentage.toFixed(2)}%</td>
+                                            </>
+                                        ) : (
+                                            <td colSpan="5">Data loading or unavailable...</td>
+                                        )}
+                                    </tr>
+                                </React.Fragment>
+                            ))}
+                            </tbody>
 
 
-                </table>
-            </div>
+                        </table>
+                    </div>
                 </div>
-        </div>
+            </div>
         </div>
     );
 }
